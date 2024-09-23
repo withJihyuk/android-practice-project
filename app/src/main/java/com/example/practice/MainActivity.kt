@@ -134,7 +134,7 @@ fun Conversion() {
     }
 }
 
-@Preview(showBackground = true, showSystemUi = true) // 여기서 showSystemUi를 통해 전체 휴대폰 모양으로 보여줄지 말지 선택할 수 있음
+@Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun GreetingPreview() {
     PracticeTheme {
