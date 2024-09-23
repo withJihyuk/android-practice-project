@@ -80,4 +80,9 @@ object Dependency {
         const val MOSHI_CONVERTER = "com.squareup.moshi:moshi-kotlin:${Versions.MOSHI}"
         const val MOSHI_CODEGEN = "com.squareup.moshi:moshi-kotlin-codegen:${Versions.MOSHI}"
     }
+
+    object Room {
+        const val ROOM_RUNTIME = "androidx.room:room-runtime:${Versions.ROOM}"
+        const val ROOM_COMPILER = "androidx.room:room-compiler:${Versions.ROOM}"
+    }
 }

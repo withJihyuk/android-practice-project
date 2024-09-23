@@ -7,13 +7,7 @@ object ProjectProperties {
     }
 
     object Id {
-        const val APPLICATION_ID = "com.chobo.mindway_v2_android"
-    }
-
-    object Files {
-        const val CONSUMER_PROGUARD_FILES = "consumer-rules.pro"
-        const val DEFAULT_PROGUARD_FILES = "proguard-android-optimize.txt"
-        const val PROGUARD_FILES = "proguard-rules.pro"
+        const val APPLICATION_ID = "com.withJihyuk.whatCloth"
     }
 
     object Versions {
@@ -28,10 +22,10 @@ object ProjectProperties {
         val JAVA_VERSION = JavaVersion.VERSION_17
     }
 
-    object NameSpace {
-        const val PRESENTATION = "com.chobo.presentation"
-        const val DOMAIN = "com.chobo.domain"
-        const val DATA = "com.chobo.data"
-        const val APP = "com.chobo.mindway_v2_android"
-    }
+//    object NameSpace {
+//        const val PRESENTATION = "com.chobo.presentation"
+//        const val DOMAIN = "com.chobo.domain"
+//        const val DATA = "com.chobo.data"
+//        const val APP = "com.chobo.mindway_v2_android"
+//    }
 }

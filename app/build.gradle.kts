@@ -52,6 +52,20 @@ android {
 }
 
 dependencies {
+    implementation(Dependency.Hilt.HILT)
+    ksp(Dependency.Hilt.HILT_COMPILER)
+    implementation(Dependency.DataStore.PREFERENCES)
+    implementation(Dependency.Retrofit.RETROFIT)
+    implementation(Dependency.Retrofit.RETROFIT_CONVERTER_GSON)
+    implementation(Dependency.OkHttp.OKHTTP)
+    implementation(Dependency.OkHttp.OKHTTP_LOGGING_INTERCEPTOR)
+    implementation(Dependency.Moshi.MOSHI)
+    implementation(Dependency.Moshi.MOSHI_CONVERTER)
+    ksp(Dependency.Moshi.MOSHI_CODEGEN)
+    implementation(Dependency.Room.ROOM_RUNTIME)
+    implementation(Dependency.Room.ROOM_COMPILER)
+    ksp(Dependency.Room.ROOM_COMPILER)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
