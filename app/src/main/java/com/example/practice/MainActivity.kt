@@ -5,33 +5,26 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.wrapContentWidth
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Add
-import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material.icons.rounded.PlayArrow
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
-import androidx.compose.material3.TextField
-import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.practice.ui.theme.PracticeTheme
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -41,7 +34,11 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             PracticeTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) {
+                Scaffold(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(20.dp)
+                ) {
                     FullScreen()
                 }
             }
@@ -53,9 +50,8 @@ class MainActivity : ComponentActivity() {
 fun FullScreen() {
     Column {
         Topbar()
-        MenuBar()
-        HorizontalDivider()
-        Conversion()
+        MainText()
+        ShowTopImages()
     }
 }
 
@@ -63,64 +59,51 @@ fun FullScreen() {
 @Composable
 fun Topbar() {
     Surface {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(18.dp),
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            TextField(
-                value = "⚡ 링크로 옷 가져오기",
-                onValueChange = {},
-                modifier = Modifier
-                    .weight(1f)
-                    .height(54.dp),
-                trailingIcon = { Icon(Icons.Rounded.Add, contentDescription = "검색") },
-                shape = RoundedCornerShape(6.dp),
-                colors = TextFieldDefaults.colors().copy(
-                    focusedIndicatorColor = Color.Transparent,
-                    unfocusedIndicatorColor = Color.Transparent,
-                    focusedContainerColor = Color(0xFFF5F5F5),
-                    unfocusedContainerColor = Color(0xFFF5F5F5),
-                )
+        Text(
+            text = "ㅇㄱㅇㄸ", style = TextStyle(
+                fontSize = 24.sp, fontWeight = FontWeight.Black
+            )
+        )
+    }
+}
+
+@Composable
+fun MainText() {
+    Surface(
+        modifier = Modifier
+            .padding(top = 60.dp)
+            .fillMaxWidth()
+    ) {
+        Column {
+            Text(
+                text = "안녕하세요, 이지혁님",
+                style = TextStyle(fontWeight = FontWeight.SemiBold, fontSize = 24.sp)
             )
             Text(
-                text = "설정",
-                modifier = Modifier
-                    .wrapContentWidth()
-                    .padding(start = 20.dp)
+                modifier = Modifier.padding(top = 8.dp),
+                text = "옷과 본인의 사진을 추가하여,\n실제 핏이 어떨지 확인해봐요!",
+                style = TextStyle(
+                    fontWeight = FontWeight.Thin,
+                    color = Color.Gray,
+                    fontSize = 20.sp
+                )
             )
         }
     }
 }
 
 @Composable
-fun MenuBar() {
-    Surface {
-        Row(
-            horizontalArrangement = Arrangement.SpaceAround,
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(top = 20.dp)
-        ) {
-            TextButton(onClick = {}) {
-                Text(text = "변환하기")
+fun ShowTopImages() {
+    Surface(modifier = Modifier.padding(top = 50.dp)) {
+        Column {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Text(text = "이런 옷은 어떠세요?", style = TextStyle(fontSize = 20.sp))
+                Icon(Icons.Rounded.PlayArrow, contentDescription = "바로가기")
             }
-            TextButton(onClick = {}) {
-                Text(text = "장바구니")
+            Row {
+//                Image(painter = , contentDescription = )
             }
         }
-    }
-}
-
-@Composable
-fun Conversion() {
-    Surface {
-        Image(
-            painter = painterResource(id = R.drawable.logo),
-            contentDescription = "안드로이드 아이콘"
-        )
     }
 }
 

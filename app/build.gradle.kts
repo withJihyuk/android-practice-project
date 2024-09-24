@@ -55,6 +55,7 @@ configurations.implementation {
 }
 
 dependencies {
+    implementation(Dependency.Coil.COIL)
     implementation(Dependency.Hilt.HILT)
     ksp(Dependency.Hilt.HILT_COMPILER)
     implementation(Dependency.DataStore.PREFERENCES)
