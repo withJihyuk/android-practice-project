@@ -1,11 +1,11 @@
-package com.example.practice.dto
+package com.withjihyuk.data.local
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.util.UUID
 
 @Entity("resultImage")
-data class ResultImage(
+data class ResultImageDto(
     @PrimaryKey(autoGenerate = true)
     val id: UUID,
     val deviceId: String,
