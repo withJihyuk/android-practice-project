@@ -1,17 +1,19 @@
 package com.example.practice.dto
 
-import androidx.room.ColumnInfo
+import androidx.compose.runtime.Immutable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.util.UUID
 
+@Immutable
 @Entity("resultImage")
-class saveResultImage(
-    @ColumnInfo(name = "id") @PrimaryKey(autoGenerate = true) var id: UUID,
-    @ColumnInfo(name = "deviceId") var deviceId: String,
-    @ColumnInfo(name = "bodyImage") var bodyImage: ByteArray,
-    @ColumnInfo(name = "clothImage") var clothImage: ByteArray,
-    @ColumnInfo(name = "resultImage") var resultImage: ByteArray,
-    @ColumnInfo(name = "productName") var productName: String,
-    @ColumnInfo(name = "productUrl") var productUrl: String
+data class ResultImage(
+    @PrimaryKey(autoGenerate = true)
+    var id: UUID,
+    var deviceId: String,
+    var bodyImageId: UUID,
+    var clothImageId: UUID,
+    var resultImageId: UUID,
+    var productName: String,
+    var productUrl: String
 )
