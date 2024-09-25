@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 import java.util.UUID
 
 @Entity("resultImage")
-data class ResultImageDto(
+data class ExampleDTO(
     @PrimaryKey(autoGenerate = true)
     val id: UUID,
     val deviceId: String,
